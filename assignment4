@@ -1,0 +1,46 @@
+#include <iostream>
+#include "Matrix.h"
+using namespace std;
+
+int main()
+{
+    Matrix a(5,5);
+    for (int i = 1; i <= 5;i++) {
+        for (int j = 1; j <= 5;j++) {
+            a.setData(i, j, i + j);
+        }
+    }
+    cout <<"a is \n" << a << endl;
+
+    Matrix b = a;
+    cout << "b is \n" << b << endl;
+
+    float** data = new float* [5];
+    for (int i = 0; i < 5; i++) {
+        data[i] = new float[5];
+        for (int j = 0; j < 5;j++) {
+            data[i][j] = i;
+        }
+    }
+
+    b = Matrix(5,5,data);
+    cout << "b is\n" << b << endl;
+
+    Matrix c;
+    c = a + b;
+    cout << "a + b is\n" << c << endl;
+
+    c = a - b;
+    cout << "a - b is\n" << c << endl;
+
+    c = a * b;
+    cout << "a * b is\n" << c << endl;
+
+    c = b*2;
+    cout << "b * 2 is\n" << c << endl;
+
+    c = 2*b;
+    cout << "2 * b is\n" << c << endl;
+
+    
+}
