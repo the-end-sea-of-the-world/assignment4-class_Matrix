@@ -42,5 +42,8 @@ int main()
     c = 2*b;
     cout << "2 * b is\n" << c << endl;
 
-    
+    for (int i = 0; i < 5; i++) {
+        delete[] data[i];
+    }
+    delete[] data;
 }
